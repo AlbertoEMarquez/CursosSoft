@@ -1,0 +1,65 @@
+﻿h1 {
+	font-family:Arial;
+	color:Red;
+}
+
+h2 {
+	font-family:Arial;
+	color:Green;
+}
+	
+p {
+  font-family:Times,Sans-serif;
+  color:#123456;
+}
+
+#logo {
+	width: 200px;
+}
+
+#tecnoImg {
+	display: block;
+	width: 500px;
+	margin: auto;
+}
+
+#tecnoTxt {
+	text-align: center;
+	
+}
+
+#table1 {
+	border-collapse: seperate;
+	align: center;
+	border-spacing: 0px;
+	border: 2px solid black;
+	caption-side:top;
+}
+
+#table1 thead th{
+	border-width: 1px;
+	border-style:solid;
+	color: blue;
+	width: 150px;
+}
+
+#table1 tbody td{
+	border-width: 1px;
+	border-style:solid;
+	border-color:black;
+	color: #557733;
+	background-color:#dddddd;
+	text-align: center;
+}
+	
+ul li {
+	list-style-type:none;
+	float:left;
+	margin-right:10px;
+}
+
+ol li {
+	list-style-type:lower-alpha;
+	color: MediumSeaGreen;
+	margin-right:10px;
+}

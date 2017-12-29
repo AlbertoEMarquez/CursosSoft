@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Course "HTML5 and CSS3 Fundamentals"</title>
+  <link rel="stylesheet" href="styles.css" type="text/css"  media="all">
+  <script type="text/javascript">
+
+    function onLoad() {
+
+      var canvas = document.getElementById("myCanvas");
+
+      var context = canvas.getContext("2d"); 
+
+      context.fillStyle = "blue";
+
+      context.beginPath();
+
+      context.arc(125, 50, 50, 0, Math.PI*2, true); 
+
+      context.closePath();
+
+      context.fill();
+
+      var text = "SOFTTEK";
+      context.fillStyle = "MediumSeaGreen";
+	  
+      context.font = "36px Times";
+	  
+      context.strokeText(text, 175, 60);
+      context.fillText(text, 175, 60);
+
+    }
+  </script>
+</head>
+<body onload="onLoad()">
+
+<header id="Home">
+  <img id="logo" src="logo.jpg" alt="A diagram of route from the user request to the web server and back again">
+</header>
+<hr>
+<nav>
+  <ul>
+    <li><a href="#Home">Home</a></li>
+    <li><a href="#AboutUs">About Us</a></li>
+    <li><a href="#Presence">Presence</a></li>
+    <li><a href="#Videos">Videos</a></li>
+	<li><a href="#NewsLetter">News Letter</a></li>
+  </ul>
+</nav>
+
+<br>
+
+<hr>
+
+<figure>
+  <img id="tecnoImg" " src="tecnologia.jpg" alt="A diagram of route from the user request to the web server and back again">
+  <figcaption id="tecnoTxt">"Value through technology"</figcaption>
+</figure>
+
+<section>
+
+<h1 id="AboutUs">About Us</h1>
+
+  <h2>Company Overview</h2>
+  
+    <p>Founded in 1982, Softtek is a global provider of process-driven IT solutions with 30 offices in North America, Latin America, Europe and Asia. With 15 Global Delivery Centers in the U.S., Mexico, China, Brazil, Argentina,  Costa Rica, Spain, Hungary and India, Softtek helps improve time-to-business-solution, lower costs of existing applications, deliver better engineered and tested applications, and produce predictable outcomes for top-tier corporations in over 20 countries.  Through on-site, on-shore and its trademarked Global Nearshore™ service delivery models, Softtek teams with CIOs to constantly increase the business value of IT. Softtek is the creator and a leader of the nearshore industry.</p>
+
+	
+  <h2>We create value through technology</h2>
+
+    <p>Our team helps organizations thrive in the digital era, through a comprehensive portfolio of services and solutions that enable business transformation, improve business efficiency and enhance IT efficacy.</p>
+    
+    <p>Since our beginning in 1982, we've established direct presence in over 20 countries and serve the global market through a network of 15 Global Delivery Centers. Softtek is the creator and a leader of the nearshore industry.</p>
+
+
+<h1 id="Presence">Presence</h1>
+
+  <table id="table1">
+    <thead>
+	  <th>Norteamérica</th>
+	  <th>Centroamérica</th>
+	  <th>Sudamérica</th>
+	  <th>Europa</th>
+	  <th>Asia</th>
+	</thead>
+	<tbody>
+	  <td>Canadá <br> México <br> Estados Unidos</td>
+	  <td>Costa Rica <br> Puerto Rico</td>
+	  <td>Argentina <br> Brasil <br> Chile <br> Colombia <br> Paraguay <br> Perú <br> Uruguay <br> Venezuela</td>
+	  <td>Francia <br> Hungría <br> Países Bajos <br> España <br> Reino Unido</td>
+	  <td>China <br> India</td>
+	  
+	</tbody>
+  </table>
+
+<h2>Mexico City Locations</h2>
+
+<ol>
+  <li>Softtek Eugenia</li>
+  <li>Softtek Toreo</li>
+  <li>Softtek Polanco</li>
+  <li>Softtek Insurgentes</li>
+</ol>
+
+<h1 id="Videos">Videos</h1>
+
+<p>Learning HTML5 and CSS3</p>
+<video src="prueba.mp4" controls>
+  <p>Your browser can´t play the video</p>
+</video>
+
+<h1 id="NewsLetter">News Letter</h1>
+
+<form method="POST" action="">
+
+<fieldset>
+  <legend>Registry</legend>
+<p>
+  <label>Name: <input id="RegisteredName" type="text" required></label>
+</p>
+<p>
+  <label>Lastname: <input id="RegisteredLastnme" type="text" required></label>
+</p>
+<p>
+  <label>Email: <input id="RegisteredEmail" type="email" required></label>
+</p>
+<p>
+  <label>Male <input name="RegisteredGenre" type="radio" value="male" required></label>
+  <label>Female <input name="RegisteredGenre" type="radio" value="female" required></label>
+</p>
+<p>
+  <label>Place of Work:</label>
+<br>
+  <label>Eugenia <input name="PlaceOfWork" type="checkbox" value="Eugenia"></label>
+<br>
+  <label>Toreo <input name="PlaceOfWork" type="checkbox" value="Toreo"></label>
+<br>
+  <label>Polanco <input name="PlaceOfWork" type="checkbox" value="Polanco"></label>
+<br>
+  <label>Insurgentes <input name="PlaceOfWork" type="checkbox" value="Insurgentes"></label>
+<br>
+  <label>On Site <input name="PlaceOfWork" type="checkbox" value="OnSite"></label>
+</p>
+<p>Receive news from:
+<select>
+  <option value="Mexico">Mexico</option>
+  <option value="Mexico">Global</option>
+</select>
+</p>
+<p>
+  <input type="submit" value="Subscribe">
+</p>
+
+</fieldset>
+
+</section>
+
+<br>
+
+<canvas id="myCanvas" width="500" height="150">
+  <p>Canvas not supported in your browser.</p>
+</canvas>
+
+<hr>
+
+<footer>
+
+<nav>
+  <ul>
+    <li><a href="#Home">Home</a></li>
+    <li><a href="#AboutUs">About Us</a></li>
+    <li><a href="#Presence">Presence</a></li>
+    <li><a href="#Videos">Videos</a></li>
+	<li><a href="#NewsLetter">News Letter</a></li>
+  </ul>
+</nav>
+
+</footer>
+
+<br>
+<br>
+</body>
+
+</html>
