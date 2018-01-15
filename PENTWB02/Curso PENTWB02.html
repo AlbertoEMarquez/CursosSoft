@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Course 2</title>
+  <link rel="stylesheet" href="styles.css" type="text/css"  media="all">
+  <script type="text/javascript">
+    
+  </script>
+</head>
+
+<body>
+
+<h1>Flexbox #1<h1>
+
+<div id="flexbox1" class="flexbox">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<h1>Flexbox #2<h1>
+
+<div id="flexbox2" class="flexbox">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<h1>Flexbox #3<h1>
+
+<div id="flexbox3" class="flexbox">
+  <div>Scale 1.5</div>
+  <div>Translate 50px</div>
+  <div>Rotate 10deg </div>
+</div>
+
+<h1>Grid #1<h1>
+
+<div id="grid1" class="grid">
+
+  <div id="spanItem1">A</div>
+  <div>B</div>
+  <div>C</div>
+  <div>D</div>
+  <div>E</div>
+  <div id="spanItem2">F</div>
+  
+</div>
+
+<h1>Animation</h1>
+
+ <img id="logo" src="logo.jpg" alt="A diagram of route from the user request to the web server and back again">
+
+ <h1>JavaScript</h1>
+ 
+ <h2 class="JSheader" >Add fruits to the basket<h2>
+ <input id="input1" type="text"></input>
+ <button type="button" onclick="addfruit(document.getElementById('input1').value)">Add fruit</button>
+ <p id="message"></p>
+ <div id="eliminateSection">
+ <h2 class="JSheader" >Eliminate every fruit with this name</h2>
+ <input id="input2" type="text"></input>
+ <button type="button" onclick="eliminateEveryFruit(document.getElementById('input2').value)">Eliminate fruits</button>
+ <button id="emptyButton" type="button" onclick="emptyBasket()">Empty whole basket</button>
+ <br>
+ <h2 class="JSheader" >Or just click on a fruit to eliminate it</h2>
+ </div>
+  <div id="basket">
+	</div>
+ 
+ <script>
+ 
+ var global = [];
+ 
+ function addfruit(fruit){
+   var messageError = document.getElementById("message");
+   try {
+   if (fruit === "" || !isNaN(fruit)){
+     throw "Please introduce the name of a fruit";
+   }
+   var content = "";
+   var i = 0;
+   var idname = "";
+   global.push(fruit);
+
+  for ( i = global.length - 1; i >= 0; i--) {
+    content = content + "<p id='fruit" + i + "'>" + global[i].toUpperCase() + "</p>";
+   }
+   document.getElementById('basket').innerHTML = content;
+
+  for ( i = global.length - 1; i >= 0; i--) {
+    idname = "fruit" + i;
+    document.getElementById(idname).addEventListener("click", function(){eliminateSingleFruit(this.id)});
+   }
+   document.getElementById('eliminateSection').style.display="block";
+   messageError.innerHTML = "";
+   }
+   catch (err) {
+     messageError.innerHTML = err;
+   }
+ }
+ 
+ function eliminateEveryFruit(fruit){
+   var content = "";
+   var tempArr = [];
+   var globalen = global.length;
+   
+   while (global.length > 0){
+     var tempString = global.pop();
+	 if (tempString != fruit){
+	   tempArr.push(tempString);
+	 }
+   }
+   for ( i = tempArr.length - 1; i >= 0; i--) {
+    content = content + "<p id='fruit" + i + "'>" + tempArr[i].toUpperCase() + "</p>";
+   }
+   document.getElementById('basket').innerHTML = content;
+   
+  for ( i = tempArr.length - 1; i >= 0; i--) {
+    idname = "fruit" + i;
+    document.getElementById(idname).addEventListener("click", function(){eliminateSingleFruit(this.id)});
+   }
+   global = tempArr;
+   if (global.length == 0){
+     document.getElementById('eliminateSection').style.display="none";
+   }
+ }
+ 
+ function eliminateSingleFruit(id){
+ 
+   var loc = id.charAt(id.length-1);
+   var content = "";
+   var tempArr = [];
+   var globalen = global.length;
+  
+  for ( i = global.length - 1; i >= 0; i--) {
+    if (i != loc){
+	   tempArr.push(global[i]);
+	}
+   }
+   for ( i = tempArr.length - 1; i >= 0; i--) {
+    content = content + "<p id='fruit" + i + "'>" + tempArr[i].toUpperCase() + "</p>";
+   }
+   document.getElementById('basket').innerHTML = content;
+   
+  for ( i = tempArr.length - 1; i >= 0; i--) {
+    idname = "fruit" + i;
+    document.getElementById(idname).addEventListener("click", function(){eliminateSingleFruit(this.id)});
+   }
+   global = tempArr;
+   if (global.length == 0){
+     document.getElementById('eliminateSection').style.display="none";
+   }
+ }
+ 
+ function emptyBasket(){
+   document.getElementById('basket').innerHTML = "";
+   global = [];
+   document.getElementById('eliminateSection').style.display="none";
+ }
+ 
+ </script>
+ 
+</body>
+
+</html>
